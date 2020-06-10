@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style  type="text/css">
+.hexagon {
+  position: relative;
+  width: 190px; 
+  height: 109.70px;
+  background-color: #64C7CC;
+  margin: 54.85px 0;
+  border-left: solid 10px #ff2828;
+  border-right: solid 10px #ff2828;
+}
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 134.35px;
+  height: 134.35px;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 17.8249px;
+}
+.hexagon:before {
+  top: -67.1751px;
+  border-top: solid 14.1421px #ff2828;
+  border-right: solid 14.1421px #ff2828;
+}
+.hexagon:after {
+  bottom: -67.1751px;
+  border-bottom: solid 14.1421px #ff2828;
+  border-left: solid 14.1421px #ff2828;
+}
+</style>
+</head>
+<body>
+	<div class="hexagon">
+	</div>
+</body>
+</html>
