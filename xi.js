@@ -1,10 +1,10 @@
 var direction_variable = 0;
 var param1;
 
-const xi = {
+const xi = (() => ({
 	_XiElementConstructor: class {
 		constructor(elementToReturn) {
-			param1 = elementToReturn;
+			let param1 = elementToReturn;
 			return document.querySelectorAll(param1);
 		}
 		static direction() {
@@ -13,8 +13,14 @@ const xi = {
 		}
 		static turn(turnBy) {
 			direction_variable += turnBy;
-			document.querySelectorAll(param1).style.transform = ('rotate(' + direction_variable + 'deg)'); 
+			document.querySelectorAll(param1).forEach((element) => {
+				element.style.transform = ('rotate(' + direction_variable + 'deg)'); 
+			});
 		}
+	},
+	element(selector) {
+		return new this._XiElementContructor(selector);
 	}
-}
+}));
+xi = xi.bind(xi)();
 
